@@ -1,0 +1,147 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  --bg: #f7f1e8;
+  --panel: rgba(255, 252, 247, 0.88);
+  --ink: #1d1b18;
+  --muted: #5f564b;
+  --accent: #b85c38;
+  --accent-strong: #8d3a1a;
+  --border: rgba(29, 27, 24, 0.12);
+  --shadow: 0 24px 50px rgba(80, 47, 22, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 380px;
+  background:
+    radial-gradient(circle at top left, rgba(184, 92, 56, 0.22), transparent 40%),
+    linear-gradient(180deg, #fcfaf6 0%, var(--bg) 100%);
+  color: var(--ink);
+}
+
+.app {
+  padding: 18px;
+}
+
+.hero {
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--accent-strong);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+.subcopy {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.panel {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.field,
+.checkbox {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.field span,
+.checkbox span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+input,
+select,
+button {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.checkbox span {
+  margin: 0;
+}
+
+button {
+  margin-top: 4px;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, var(--accent) 0%, #d88a5a 100%);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 14px 28px rgba(184, 92, 56, 0.25);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+  transform: none;
+}
+
+.status {
+  min-height: 20px;
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.status.error {
+  color: #a12828;
+}
+
+.status.success {
+  color: #1b6b3d;
+}

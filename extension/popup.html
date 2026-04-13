@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NotebookLM Page Ingestor</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <p class="eyebrow">NotebookLM Bridge</p>
+        <h1>Capture this page</h1>
+        <p class="subcopy">Extract the readable content from the current tab, save it locally, and push it into NotebookLM.</p>
+      </section>
+
+      <section class="panel">
+        <label class="field">
+          <span>Backend URL</span>
+          <input id="backendUrl" type="url" placeholder="http://127.0.0.1:8765" />
+        </label>
+
+        <label class="field">
+          <span>Notebook ID</span>
+          <input id="notebookId" type="text" placeholder="Optional if notebook title is set" />
+        </label>
+
+        <label class="field">
+          <span>Notebook Title</span>
+          <input id="notebookTitle" type="text" placeholder="Optional. Backend can create it if missing." />
+        </label>
+
+        <label class="field">
+          <span>Ingestion Mode</span>
+          <select id="sourceMode">
+            <option value="text">Upload extracted text</option>
+            <option value="url">Add the page URL only</option>
+            <option value="text-and-url">Upload text and add URL</option>
+          </select>
+        </label>
+
+        <label class="checkbox">
+          <input id="includeSelectionFirst" type="checkbox" checked />
+          <span>Prefer highlighted text when I’ve selected something</span>
+        </label>
+
+        <button id="sendButton" type="button">Send Current Page</button>
+        <p id="status" class="status">Waiting for action.</p>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
